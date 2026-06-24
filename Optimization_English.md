@@ -158,11 +158,13 @@ If you manage a **server network**, choosing the proxy is crucial:
 network-compression-threshold=256
 ```
 
-Defines the minimum size of a packet before the server compresses it.
+Defines the minimum packet size (in bytes) required for the server to compress a network packet before sending it.
 
-- **Higher** — Less CPU, more bandwidth
-- **`-1`** — Disables compression (ideal if the proxy is on the same machine with less than 2ms ping)
-- **Lower** — More CPU, less bandwidth (harms slow connections)
+Compression reduces bandwidth usage but slightly increases CPU usage. Small packets are not compressed to avoid unnecessary overhead.
+
+* **Higher value** — Less CPU usage, more uncompressed network traffic
+* **Lower value** — More compression, lower bandwidth usage, but higher CPU load
+* **`-1`** — Disables compression entirely (all packets are sent uncompressed; this can significantly increase bandwidth usage)
 
 </details>
 
