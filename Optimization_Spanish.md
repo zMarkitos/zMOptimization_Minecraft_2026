@@ -696,6 +696,23 @@ Otras opciones de tick-rate disponibles (déjalas en `1` por defecto salvo que t
 
 </details>
 
+<details>
+<summary><b>unsupported-settings</b> — Ver valores recomendados</summary>
+
+```yaml
+unsupported-settings:
+  disable-world-ticking-when-empty: true
+  fix-invulnerable-end-crystal-exploit: true
+```
+
+> ⚠️ Estas configuraciones no tienen soporte oficial de PaperMC y pueden ser eliminadas en versiones futuras. Úsalas bajo tu propio riesgo.
+
+**`disable-world-ticking-when-empty: true`** — Detiene completamente el tick de un mundo cuando no hay jugadores presentes ni chunks cargados por la fuerza. Muy recomendado si tu servidor tiene el Nether o el End activos pero los jugadores los visitan raramente. Incluye el spawn de mobs, ticks aleatorios de bloques, clima, y la creación de hielo y nieve.
+
+**`fix-invulnerable-end-crystal-exploit: true`** — Evita la creación de Cristales del End invulnerables, que pueden usarse para causar lag o crashear el servidor. Mantenlo en `true` salvo que tengas una razón muy específica de PvP para permitirlo (soluciona [MC-108513](https://bugs.mojang.com/browse/MC-108513)).
+
+</details>
+
 ---
 
 ### Helpers y Seguridad
